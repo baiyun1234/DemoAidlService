@@ -5,18 +5,25 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btn_main_add"
+    <EditText
+        android:id="@+id/et_add_x"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="服务端  add" />
+        android:inputType="number"
+        android:text="11"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/et_add_y"
+        android:layout_width="match_parent"
+        android:inputType="number"
+        android:text="22"
+        android:layout_height="wrap_content" />
 
     <Button
-        android:id="@+id/btn_main_book"
+        android:id="@+id/btn_add"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="服务端  book" />
-
+        android:text="服务端  相加" />
 
 
 </LinearLayout>  

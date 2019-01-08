@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <!-- ==================================activity==================================== -->
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,12 +19,20 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".AddActivity" />
+        <activity android:name=".BookActivity"/>
+
+        <!-- ==================================service==================================== -->
         <service android:name=".AddService">
-
             <intent-filter>
-                <action android:name="bai.bai.bai.aidl.service_add"/>
+                <action android:name="bai.bai.bai.aidl.service_add" />
             </intent-filter>
+        </service>
 
+        <service android:name=".BookService">
+            <intent-filter>
+                <action android:name="bai.bai.bai.aidl.service_book" />
+            </intent-filter>
         </service>
 
     </application>
