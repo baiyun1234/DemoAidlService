@@ -27,13 +27,26 @@ public class AddActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                Log.d("baibai", "服务端：相加按钮 -- 当前线程Name = " + Thread.currentThread().getName() + ", id = " + Thread.currentThread().getId());
                 int x = Integer.parseInt(((EditText) findViewById(R.id.et_add_x)).getText().toString());
                 int y = Integer.parseInt(((EditText) findViewById(R.id.et_add_y)).getText().toString());
                 try {
-                    Log.d("baibai", "服务端 相加结果：" + mService.add(x, y));
+                    Log.d("baibai", "服务端：相加结果：" + mService.add(x, y));
                 } catch (RemoteException e) {
                     e.printStackTrace();
                 }
+
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            Log.d("baibai", "服务端：子线程：相加按钮 -- 当前线程Name = " + Thread.currentThread().getName() + ", id = " + Thread.currentThread().getId());
+                            Log.d("baibai", "服务端：子线程：相加结果：" + mService.add(6, 2));
+                        } catch (RemoteException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }).start();
 
             }
         });
